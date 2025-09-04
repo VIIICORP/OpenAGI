@@ -10,7 +10,7 @@ from .base import BaseTool
 from .web_search import WebSearchTool
 from .file_system import ReadFileTool, WriteFileTool, ListFilesTool
 from .code_execution import ExecutePythonCodeTool
-from .audio_generation import GenerateSoundWaveTool
+from .audio_generation import GenerateSoundWaveTool, MusicalSoundWaveTool
 
 __all__ = [
     "BaseTool",
@@ -19,5 +19,6 @@ __all__ = [
     "WriteFileTool",
     "ListFilesTool",
     "ExecutePythonCodeTool",
-    "GenerateSoundWaveTool"
+    "GenerateSoundWaveTool",
+    "MusicalSoundWaveTool"
 ]

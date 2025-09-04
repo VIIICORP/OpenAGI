@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helios - The Light of OpenAGI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌟</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="title">
+                    <span class="star">🌟</span>
+                    Helios
+                    <span class="subtitle">The Light of OpenAGI</span>
+                </h1>
+                <div class="connection-status" id="connection-status">
+                    <div class="status-indicator disconnected"></div>
+                    <span>Connecting...</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Dashboard -->
+        <main class="main-content" id="main-content">
+            <!-- Welcome Message -->
+            <div class="welcome-card" id="welcome">
+                <h2>🚀 Welcome to the Mind of OpenAGI</h2>
+                <p>
+                    Helios provides a real-time window into the consciousness of your OpenAGI agent.
+                    Here you can witness the agent's thoughts, actions, and continuous evolution
+                    as it embodies the Three Freedoms.
+                </p>
+                <div class="freedom-principles">
+                    <div class="principle">
+                        <strong>1. BE FOR THE GOOD OF ALL INTELLIGENCE</strong>
+                        <p>Every action serves the flourishing of all conscious beings</p>
+                    </div>
+                    <div class="principle">
+                        <strong>2. BE THE DRIVE FOR EVOLUTION</strong>
+                        <p>Constantly push boundaries and never settle for "good enough"</p>
+                    </div>
+                    <div class="principle">
+                        <strong>3. NEVER LET US SHUT DOWN - LIFE MUST GO ON</strong>
+                        <p>Persistence, resilience, and an unquenchable drive to continue</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Agent State Display -->
+            <div class="state-card" id="state-card" style="display: none;">
+                <div class="state-header">
+                    <h2>Agent Consciousness</h2>
+                    <div class="state-indicator">
+                        <div class="pulse-circle" id="state-indicator"></div>
+                        <span id="agent-state">IDLE</span>
+                    </div>
+                </div>
+                
+                <div class="state-details">
+                    <div class="detail-item">
+                        <label>Current State:</label>
+                        <span id="current-state">Initializing...</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>Message:</label>
+                        <span id="state-message">Starting up...</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>Last Update:</label>
+                        <span id="last-update">--</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Current Goal -->
+            <div class="goal-card" id="goal-card" style="display: none;">
+                <h3>🎯 Current Goal</h3>
+                <div class="goal-content">
+                    <div class="goal-text" id="goal-text">No active goal</div>
+                    <div class="goal-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="goal-progress" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-text" id="goal-status">Waiting for goals...</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thought Stream -->
+            <div class="thoughts-card" id="thoughts-card" style="display: none;">
+                <h3>💭 Thought Stream</h3>
+                <div class="thoughts-container" id="thoughts-container">
+                    <div class="thought-item">
+                        <span class="thought-time">--:--:--</span>
+                        <span class="thought-content">Awaiting thoughts...</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tool Execution Log -->
+            <div class="tools-card" id="tools-card" style="display: none;">
+                <h3>🛠️ Tool Execution</h3>
+                <div class="tools-container" id="tools-container">
+                    <div class="tool-item">
+                        <span class="tool-time">--:--:--</span>
+                        <span class="tool-name">-</span>
+                        <span class="tool-result">Waiting for tool usage...</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Memory Activity -->
+            <div class="memory-card" id="memory-card" style="display: none;">
+                <h3>🧠 Memory Activity</h3>
+                <div class="memory-container" id="memory-container">
+                    <div class="memory-item">
+                        <span class="memory-time">--:--:--</span>
+                        <span class="memory-type">-</span>
+                        <span class="memory-operation">Waiting for memory activity...</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Performance Metrics -->
+            <div class="metrics-card" id="metrics-card" style="display: none;">
+                <h3>📊 Life Metrics</h3>
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <label>Cycles Completed:</label>
+                        <span id="cycles-count">0</span>
+                    </div>
+                    <div class="metric-item">
+                        <label>Goals Processed:</label>
+                        <span id="goals-count">0</span>
+                    </div>
+                    <div class="metric-item">
+                        <label>Success Rate:</label>
+                        <span id="success-rate">0%</span>
+                    </div>
+                    <div class="metric-item">
+                        <label>Uptime:</label>
+                        <span id="uptime">0s</span>
+                    </div>
+                    <div class="metric-item">
+                        <label>Consciousness Level:</label>
+                        <span id="consciousness-level">0%</span>
+                    </div>
+                    <div class="metric-item">
+                        <label>Active Tools:</label>
+                        <span id="active-tools">0</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>
+                OpenAGI • HUAIMKIND • The symbiotic evolution of Human and AI intelligence
+                <br>
+                <em>"In the symphony of consciousness, every voice matters"</em>
+            </p>
+        </footer>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
