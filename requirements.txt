@@ -1,0 +1,43 @@
+# Core Dependencies
+requests>=2.31.0
+numpy>=1.24.0
+scipy>=1.10.0
+
+# AI/ML Libraries
+torch>=2.0.0
+transformers>=4.30.0
+accelerate>=0.20.0
+huggingface_hub>=0.15.0
+
+# Voice Capabilities
+openai-whisper>=20230314
+TTS>=0.13.0
+vosk>=0.3.45
+pydub>=0.25.1
+sounddevice>=0.4.6
+soundfile>=0.12.1
+
+# Memory and Vector Database
+chromadb>=0.4.0
+sentence-transformers>=2.2.0
+
+# Web and Networking
+websockets>=11.0.0
+fastapi>=0.100.0
+uvicorn>=0.22.0
+aiofiles>=23.1.0
+
+# Search and Web
+duckduckgo-search>=3.8.0
+beautifulsoup4>=4.12.0
+
+# LLM Inference
+llama-cpp-python>=0.2.0
+text-generation>=0.6.0
+
+# Utilities
+pyyaml>=6.0
+python-dotenv>=1.0.0
+rich>=13.0.0
+click>=8.1.0
+psutil>=5.9.0

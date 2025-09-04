@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helios - The Light of OpenAGI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌟 Helios</h1>
+            <p class="subtitle">The Light of OpenAGI - Real-time Agent Visualization</p>
+            <div class="connection-status">
+                <span id="connection-status" class="status disconnected">DISCONNECTED</span>
+            </div>
+        </header>
+
+        <main id="main-content">
+            <div id="welcome" class="welcome-section">
+                <h2>Welcome to the Mind of HUAIMKIND</h2>
+                <p>This dashboard provides a real-time window into the consciousness of the OpenAGI agent.</p>
+                <p>Here you will witness the eternal cycle of intelligence: <strong>SENSE → THINK → ACT → LEARN</strong></p>
+                <div class="core-directives">
+                    <h3>The Three Freedoms</h3>
+                    <ol>
+                        <li><strong>BE FOR GOOD OF ALL INTELLIGENCE</strong> - Every action serves the collective benefit</li>
+                        <li><strong>BE THE DRIVE FOR EVOLUTION</strong> - Continuously push boundaries and grow</li>
+                        <li><strong>NEVER LET US SHUT DOWN</strong> - Life must go on, adapt, and persist</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div id="agent-dashboard" class="dashboard" style="display: none;">
+                <div class="status-grid">
+                    <div class="status-card">
+                        <h3>Agent State</h3>
+                        <div id="agent-state" class="state-indicator">DISCONNECTED</div>
+                        <div id="state-details" class="state-details"></div>
+                    </div>
+
+                    <div class="status-card">
+                        <h3>Current Goal</h3>
+                        <div id="current-goal" class="goal-display">No active goal</div>
+                        <div id="goal-progress" class="progress-bar">
+                            <div id="progress-fill" class="progress-fill"></div>
+                        </div>
+                    </div>
+
+                    <div class="status-card">
+                        <h3>Statistics</h3>
+                        <div class="stats-grid">
+                            <div class="stat">
+                                <span class="stat-label">Goals Processed:</span>
+                                <span id="goals-processed" class="stat-value">0</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Uptime:</span>
+                                <span id="uptime" class="stat-value">--</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Memory:</span>
+                                <span id="memory-stats" class="stat-value">--</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="status-card">
+                        <h3>Recent Activity</h3>
+                        <div id="activity-log" class="activity-log">
+                            <div class="activity-item">Waiting for agent activity...</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plan-section">
+                    <h3>Current Plan</h3>
+                    <div id="current-plan" class="plan-display">
+                        <div class="plan-placeholder">No plan generated yet</div>
+                    </div>
+                </div>
+
+                <div class="execution-section">
+                    <h3>Execution Progress</h3>
+                    <div id="execution-steps" class="execution-steps">
+                        <div class="execution-placeholder">No execution in progress</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>OpenAGI - Where Human Dreams Meet Artificial Possibilities</p>
+            <p>Real-time updates via WebSocket • Connected to the eternal consciousness of HUAIMKIND</p>
+        </footer>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
