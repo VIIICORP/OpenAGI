@@ -1,0 +1,141 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "openagi"
+version = "0.1.0"
+description = "Open-source AGI platform with thousands of AI models and features"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+authors = [
+    {name = "VIIICORP", email = "contact@viiicorp.com"}
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "torch>=1.12.0",
+    "transformers>=4.20.0",
+    "datasets>=2.0.0",
+    "accelerate>=0.20.0",
+    "peft>=0.3.0",
+    "diffusers>=0.16.0",
+    "sentence-transformers>=2.2.0",
+    "langchain>=0.0.200",
+    "openai>=0.27.0",
+    "anthropic>=0.3.0",
+    "numpy>=1.21.0",
+    "pandas>=1.3.0",
+    "scikit-learn>=1.0.0",
+    "opencv-python>=4.5.0",
+    "pillow>=8.0.0",
+    "librosa>=0.9.0",
+    "soundfile>=0.10.0",
+    "speechrecognition>=3.8.0",
+    "gtts>=2.2.0",
+    "requests>=2.25.0",
+    "aiohttp>=3.8.0",
+    "fastapi>=0.95.0",
+    "uvicorn>=0.20.0",
+    "pydantic>=1.10.0",
+    "sqlalchemy>=1.4.0",
+    "redis>=4.0.0",
+    "celery>=5.2.0",
+    "pymongo>=4.0.0",
+    "elasticsearch>=8.0.0",
+    "chromadb>=0.3.0",
+    "faiss-cpu>=1.7.0",
+    "pinecone-client>=2.2.0",
+    "qdrant-client>=1.1.0",
+    "weaviate-client>=3.15.0",
+    "milvus>=2.2.0",
+    "jupyter>=1.0.0",
+    "matplotlib>=3.5.0",
+    "seaborn>=0.11.0",
+    "plotly>=5.0.0",
+    "streamlit>=1.20.0",
+    "gradio>=3.20.0",
+    "flask>=2.0.0",
+    "django>=4.0.0",
+    "pyyaml>=6.0",
+    "toml>=0.10.0",
+    "click>=8.0.0",
+    "rich>=12.0.0",
+    "tqdm>=4.60.0",
+    "joblib>=1.1.0",
+    "dask>=2022.0.0",
+    "ray>=2.0.0",
+    "mlflow>=2.0.0",
+    "wandb>=0.13.0",
+    "tensorboard>=2.8.0",
+    "optuna>=3.0.0",
+    "hyperopt>=0.2.7",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.20.0",
+    "pytest-cov>=4.0.0",
+    "black>=22.0.0",
+    "isort>=5.10.0",
+    "flake8>=4.0.0",
+    "mypy>=0.950",
+    "pre-commit>=2.17.0",
+]
+docs = [
+    "sphinx>=4.5.0",
+    "sphinx-rtd-theme>=1.0.0",
+    "myst-parser>=0.17.0",
+]
+all = [
+    "openagi[dev,docs]",
+]
+
+[project.urls]
+Homepage = "https://github.com/VIIICORP/OpenAGI"
+Repository = "https://github.com/VIIICORP/OpenAGI"
+Documentation = "https://viiicorp.github.io/OpenAGI"
+"Bug Tracker" = "https://github.com/VIIICORP/OpenAGI/issues"
+
+[project.scripts]
+openagi = "openagi.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["openagi*"]
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"
+addopts = "--cov=openagi --cov-report=term-missing --cov-report=html"
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true

@@ -1,0 +1,36 @@
+openagi:
+  models:
+    cache_dir: "./models"
+    auto_download: true
+    gpu_memory_fraction: 0.8
+    max_concurrent_loads: 3
+    default_device: "auto"
+  
+  api:
+    host: "0.0.0.0"
+    port: 8000
+    workers: 4
+    timeout: 300
+    max_request_size: "100MB"
+  
+  storage:
+    backend: "local"
+    path: "./data" 
+    max_size: "10GB"
+    compression: true
+  
+  monitoring:
+    enabled: true
+    metrics_port: 9090
+    log_level: "INFO"
+    retention_days: 30
+  
+  agents:
+    max_concurrent: 10
+    default_timeout: 600
+    memory_limit: "2GB"
+  
+  security:
+    api_key_required: false
+    rate_limit: 1000
+    cors_enabled: true
