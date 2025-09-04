@@ -1,0 +1,61 @@
+# Core dependencies for LLM and AI processing
+openai-whisper>=20231117
+transformers>=4.35.0
+torch>=2.0.0
+huggingface-hub>=0.18.0
+accelerate>=0.24.0
+
+# Audio processing and generation
+TTS>=0.19.0
+soundfile>=0.12.0
+librosa>=0.10.0
+numpy>=1.24.0
+scipy>=1.11.0
+pyaudio>=0.2.11
+
+# Vector database and memory
+chromadb>=0.4.15
+sentence-transformers>=2.2.2
+
+# Web capabilities
+requests>=2.31.0
+duckduckgo-search>=3.9.0
+beautifulsoup4>=4.12.0
+
+# WebSocket and web interface
+websockets>=11.0.0
+aiohttp>=3.8.0
+fastapi>=0.104.0
+uvicorn>=0.24.0
+
+# File processing and utilities
+python-magic>=0.4.27
+Pillow>=10.0.0
+markdown>=3.5.0
+
+# Code execution and security
+docker>=6.1.0
+subprocess-safer>=1.0.0
+
+# Local LLM support
+llama-cpp-python>=0.2.20
+ctransformers>=0.2.27
+
+# Development and testing
+pytest>=7.4.0
+black>=23.9.0
+flake8>=6.1.0
+mypy>=1.6.0
+
+# Cross-platform support
+psutil>=5.9.0
+platform-specific-installs>=1.0.0
+
+# Additional AI model libraries
+diffusers>=0.21.0
+controlnet-aux>=0.0.6
+xformers>=0.0.22
+
+# Multimodal capabilities
+opencv-python>=4.8.0
+mediapipe>=0.10.7
