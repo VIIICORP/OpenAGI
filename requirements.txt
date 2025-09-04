@@ -13,6 +13,11 @@ numpy>=1.24.0
 scipy>=1.11.0
 pyaudio>=0.2.11
 
+# Voice interface (Speech-to-Text and Text-to-Speech)
+openai-whisper>=20231117
+torch>=2.0.0
+torchaudio>=2.0.0
+
 # Vector database and memory
 chromadb>=0.4.15
 sentence-transformers>=2.2.2

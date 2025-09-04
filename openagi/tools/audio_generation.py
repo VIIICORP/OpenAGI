@@ -22,6 +22,10 @@ try:
 except ImportError:
     AUDIO_AVAILABLE = False
     logger.warning("Audio dependencies not available. Audio generation will be disabled.")
+    # Create dummy modules for type hints
+    class _DummyNumpy:
+        ndarray = object
+    np = _DummyNumpy()
 
 class GenerateSoundWaveTool(BaseTool):
     """

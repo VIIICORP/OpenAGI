@@ -21,14 +21,69 @@ __license__ = "Apache License 2.0"
 
 # Core imports for easy access
 from .core_directives import CORE_DIRECTIVES, get_freedom_principles
-from .agent.engine import AgentEngine
-from .agent.memory import MemoryManager
-from .agent.task_planner import LlmPoweredTaskPlanner
+
+# Try to import components that require dependencies
+try:
+    from .agent.engine import AgentEngine
+    AGENT_AVAILABLE = True
+except ImportError:
+    AGENT_AVAILABLE = False
+
+try:
+    from .agent.memory import MemoryManager
+    MEMORY_AVAILABLE = True
+except ImportError:
+    MEMORY_AVAILABLE = False
+
+try:
+    from .agent.task_planner import LlmPoweredTaskPlanner
+    PLANNER_AVAILABLE = True
+except ImportError:
+    PLANNER_AVAILABLE = False
+
+# Voice interface imports (optional)
+try:
+    from .voice.voice_interface import VoiceInterface
+    from .voice.stt import SpeechToTextEngine
+    from .voice.tts import TextToSpeechEngine
+    VOICE_AVAILABLE = True
+except ImportError:
+    VOICE_AVAILABLE = False
+
+# Helios visualization imports
+try:
+    from .helios.client import HeliosClient
+    from .helios.server import HeliosServer
+    HELIOS_AVAILABLE = True
+except ImportError:
+    HELIOS_AVAILABLE = False
 
 __all__ = [
     "CORE_DIRECTIVES",
-    "get_freedom_principles", 
-    "AgentEngine",
-    "MemoryManager",
-    "LlmPoweredTaskPlanner",
+    "get_freedom_principles",
 ]
+
+# Add components to exports if available
+if AGENT_AVAILABLE:
+    __all__.append("AgentEngine")
+
+if MEMORY_AVAILABLE:
+    __all__.append("MemoryManager")
+
+if PLANNER_AVAILABLE:
+    __all__.append("LlmPoweredTaskPlanner")
+
+# Add voice interface to exports if available
+if VOICE_AVAILABLE:
+    __all__.extend([
+        "VoiceInterface",
+        "SpeechToTextEngine", 
+        "TextToSpeechEngine"
+    ])
+
+# Add Helios to exports if available
+if HELIOS_AVAILABLE:
+    __all__.extend([
+        "HeliosClient",
+        "HeliosServer"
+    ])
