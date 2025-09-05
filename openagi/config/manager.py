@@ -71,6 +71,18 @@ class ModelsConfig:
     timeout_seconds: int = 300
     device: str = "auto"  # auto, cpu, cuda
     precision: str = "fp16"  # fp32, fp16, int8
+    
+    def to_dict(self) -> Dict[str, Any]:
+        """Convert to dictionary."""
+        return {
+            "cache_dir": self.cache_dir,
+            "max_models": self.max_models,
+            "default_models": self.default_models,
+            "auto_download": self.auto_download,
+            "timeout_seconds": self.timeout_seconds,
+            "device": self.device,
+            "precision": self.precision
+        }
 
 
 @dataclass
