@@ -1,0 +1,40 @@
+{
+  "backup_1757040837593": {
+    "backup_id": "backup_1757040837593",
+    "timestamp": 1757040837.5936224,
+    "backup_type": "auto",
+    "size_bytes": 2507,
+    "file_path": "backups/backup_1757040837593.zip",
+    "description": "Automatic backup",
+    "metadata": {
+      "platform_version": "1.0.0",
+      "components": [
+        "platform_info",
+        "agents",
+        "configuration",
+        "monitoring",
+        "features"
+      ],
+      "agent_count": 0
+    }
+  },
+  "backup_1757040851601": {
+    "backup_id": "backup_1757040851601",
+    "timestamp": 1757040851.6010587,
+    "backup_type": "demo",
+    "size_bytes": 2508,
+    "file_path": "backups/backup_1757040851601.zip",
+    "description": "Demo backup for testing",
+    "metadata": {
+      "platform_version": "1.0.0",
+      "components": [
+        "platform_info",
+        "agents",
+        "configuration",
+        "monitoring",
+        "features"
+      ],
+      "agent_count": 0
+    }
+  }
+}
