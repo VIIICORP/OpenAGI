@@ -1,0 +1,57 @@
+"""Configuration file for OpenAGI platform."""
+
+# General settings
+app_name: "OpenAGI"
+app_version: "1.0.0"
+environment: "development"
+data_dir: "./data"
+
+# Database configuration
+database:
+  url: "sqlite:///openagi.db"
+  pool_size: 10
+  max_overflow: 20
+  echo: false
+
+# Redis configuration
+redis:
+  host: "localhost"
+  port: 6379
+  password: null
+  db: 0
+
+# AI configuration
+ai:
+  model_cache_dir: "./models"
+  max_model_memory: 4096
+  device: "auto"
+  enable_gpu: true
+
+# Debugging configuration
+debugging:
+  enable_auto_debug: true
+  debug_level: 2
+  max_debug_history: 1000
+  enable_self_healing: true
+  health_check_interval: 30
+
+# Monitoring configuration
+monitoring:
+  enable_metrics: true
+  metrics_port: 9090
+  log_level: "INFO"
+  log_file: null
+  enable_prometheus: true
+
+# API configuration
+api:
+  host: "127.0.0.1"
+  port: 8000
+  workers: 4
+  reload: false
+  debug: false
+
+# Advanced features
+enable_distributed: false
+enable_clustering: false
+security_key: "openagi-secret-key"
