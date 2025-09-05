@@ -1,0 +1,87 @@
+# OpenAGI Platform Configuration
+
+server:
+  host: "0.0.0.0"
+  port: 8000
+  workers: 4
+  debug: false
+  log_level: "info"
+  cors_origins:
+    - "*"
+  max_request_size: 16777216  # 16MB
+
+database:
+  url: "postgresql://localhost:5432/openagi"
+  pool_size: 10
+  max_overflow: 20
+  pool_timeout: 30
+  pool_recycle: 3600
+  echo: false
+
+redis:
+  url: "redis://localhost:6379/0"
+  max_connections: 20
+  retry_on_timeout: true
+  socket_keepalive: true
+
+models:
+  cache_dir: "models/"
+  max_models: 10
+  default_models:
+    - "gpt-base"
+    - "vision-base"
+  auto_download: true
+  timeout_seconds: 300
+  device: "auto"  # auto, cpu, cuda
+  precision: "fp16"  # fp32, fp16, int8
+
+testing:
+  enabled: true
+  auto_run: false
+  schedule: "0 */6 * * *"  # Every 6 hours
+  interval_seconds: 21600  # 6 hours
+  parallel_workers: 4
+  max_test_duration: 3600  # 1 hour
+  sample_rate: 0.01  # 1% for quick tests
+  comprehensive_sample_rate: 1.0  # 100% for comprehensive tests
+  seed: 42
+  categories_enabled:
+    - "functional"
+    - "performance"
+    - "robustness"
+    - "consistency"
+    - "integration"
+    - "security"
+    - "regression"
+    - "stress"
+    - "compatibility"
+    - "edge_case"
+
+monitoring:
+  enabled: true
+  prometheus_port: 9090
+  metrics_interval: 30
+  retention_days: 30
+  alerts_enabled: true
+  log_level: "info"
+  export_metrics: true
+
+security:
+  secret_key: "your-secret-key-change-in-production"
+  algorithm: "HS256"
+  access_token_expire_minutes: 30
+  refresh_token_expire_days: 7
+  password_min_length: 8
+  max_login_attempts: 5
+  lockout_duration_minutes: 15
+  enable_rate_limiting: true
+  rate_limit_requests: 100
+  rate_limit_window: 60
+
+# Global settings
+environment: "development"
+debug: false
+timezone: "UTC"
+data_dir: "data/"
+logs_dir: "logs/"
+temp_dir: "tmp/"
