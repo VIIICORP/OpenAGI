@@ -1,0 +1,34 @@
+# OpenAGI Configuration
+logging_level: INFO
+auto_load_features: true
+feature_timeout: 300
+enable_caching: true
+max_concurrent_features: 10
+
+# Feature-specific settings
+nlp:
+  default_language: "en"
+  max_text_length: 10000
+
+computer_vision:
+  default_image_format: "RGB"
+  max_image_size: [1920, 1080]
+
+machine_learning:
+  default_random_state: 42
+  cross_validation_folds: 5
+
+audio_processing:
+  default_sample_rate: 44100
+  max_audio_length: 300
+
+# API settings
+api:
+  rate_limit: 1000
+  timeout: 30
+
+# Cache settings
+cache:
+  enabled: true
+  max_size: "1GB"
+  ttl: 3600
