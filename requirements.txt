@@ -1,0 +1,20 @@
+# Core dependencies for OpenAGI platform
+click>=8.0.0
+pyyaml>=6.0
+psutil>=5.8.0
+
+# Optional AI dependencies (install with: pip install openagi[ai])
+# numpy>=1.21.0
+# torch>=1.12.0
+# transformers>=4.20.0
+# scikit-learn>=1.1.0
+
+# Optional web dependencies (install with: pip install openagi[web])
+# fastapi>=0.95.0
+# uvicorn>=0.20.0
+# pydantic>=1.10.0
+# requests>=2.28.0
+# aiohttp>=3.8.0
+
+# Optional GPU dependencies (install with: pip install openagi[gpu])
+# GPUtil>=1.4.0
