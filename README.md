@@ -290,6 +290,7 @@ machine_learning:
 
 ## 🧪 Testing
 
+### Running Tests
 Run the test suite:
 
 ```bash
@@ -302,6 +303,30 @@ pytest tests/
 # Run tests with coverage
 pytest --cov=openagi tests/
 ```
+
+### Beta Testing Program
+
+**Join our beta testing community!** We're looking for AI/ML practitioners to help us perfect OpenAGI before public release.
+
+**What you'll get:**
+- Early access to 14,000+ AI features
+- Direct influence on product development
+- Recognition as a founding community member
+- Exclusive beta tester resources and support
+
+**What we're looking for:**
+- Experience with AI/ML tools and frameworks
+- Willingness to provide detailed feedback
+- 2-4 hours per week commitment
+- Interest in exploring diverse AI capabilities
+
+**How to join:**
+1. Read our [User Testing Guide](./USER_TESTING.md)
+2. Fill out the [Beta Testing Application](#) 
+3. Join our testing community on Discord
+4. Start testing and providing feedback!
+
+Learn more about our beta testing program in [USER_TESTING.md](./USER_TESTING.md).
 
 ## 🤝 Contributing
 
