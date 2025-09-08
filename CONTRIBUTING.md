@@ -114,6 +114,42 @@ We welcome feature requests! Please:
 
 By contributing to OpenAGI, you agree that your contributions will be licensed under the Apache License 2.0.
 
+## 👥 User Testing and Beta Program
+
+### Becoming a Beta Tester
+
+If you're interested in testing OpenAGI before public release:
+
+1. **Check out our [User Testing Program](./USER_TESTING.md)**
+2. **Apply through our beta testing form**: [Application Link]
+3. **Join our testing community** on Discord
+4. **Participate in structured testing cycles**
+
+### User Testing Contributions
+
+Beta testers can contribute by:
+
+- **Bug Reports**: Report issues with detailed reproduction steps
+- **Feature Feedback**: Evaluate new features and provide improvement suggestions  
+- **Usability Testing**: Test user interfaces and developer experience
+- **Documentation Review**: Help improve guides and tutorials
+- **Performance Testing**: Validate feature performance and scalability
+
+### Testing Guidelines
+
+- **Be Constructive**: Provide specific, actionable feedback
+- **Be Thorough**: Test edge cases and error conditions
+- **Be Timely**: Report issues promptly during testing cycles
+- **Be Collaborative**: Engage with other testers and the development team
+
+### Recognition Program
+
+Active beta testers receive:
+- **Early Access**: Preview features before public release
+- **Community Recognition**: Acknowledgment in release notes and community
+- **Direct Impact**: Influence on product development and roadmap
+- **Exclusive Resources**: Access to beta-only documentation and support
+
 ## 🙏 Thank You
 
-Thank you for contributing to OpenAGI! Your contributions help make AI more accessible to everyone.
+Thank you for contributing to OpenAGI! Whether through code, testing, documentation, or community building, your contributions help make AI more accessible to everyone.

@@ -279,6 +279,10 @@ logs/
 tensorboard/
 wandb/
 
+# User Testing Data (should not be committed)
+beta_testing_data/
+recruitment_data/
+
 # Docker
 Dockerfile.local
 docker-compose.override.yml
