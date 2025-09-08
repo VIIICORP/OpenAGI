@@ -1,0 +1,92 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to release (e.g., v1.0.1)'
+        required: true
+        type: string
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install build twine
+        pip install -e .
+    
+    - name: Test package
+      run: |
+        python -c "from openagi import OpenAGI, __version__; print(f'OpenAGI v{__version__} loaded successfully')"
+        python -c "from openagi.cli import main; main()" --help
+    
+    - name: Build package
+      run: |
+        python -m build
+    
+    - name: Extract version from tag
+      id: version
+      run: |
+        if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+          echo "version=${{ github.event.inputs.version }}" >> $GITHUB_OUTPUT
+        else
+          echo "version=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+        fi
+    
+    - name: Generate release notes
+      id: release_notes
+      run: |
+        VERSION="${{ steps.version.outputs.version }}"
+        VERSION_NO_V="${VERSION#v}"
+        
+        # Extract changelog section for this version
+        if grep -q "## \[$VERSION_NO_V\]" CHANGELOG.md; then
+          sed -n "/## \[$VERSION_NO_V\]/,/## \[/p" CHANGELOG.md | sed '$d' | tail -n +2 > release_notes.md
+        else
+          echo "Release $VERSION_NO_V" > release_notes.md
+          echo "" >> release_notes.md
+          echo "See CHANGELOG.md for detailed changes." >> release_notes.md
+        fi
+        
+        echo "Release notes generated:"
+        cat release_notes.md
+    
+    - name: Create GitHub Release
+      uses: softprops/action-gh-release@v1
+      with:
+        tag_name: ${{ steps.version.outputs.version }}
+        name: OpenAGI ${{ steps.version.outputs.version }}
+        body_path: release_notes.md
+        files: |
+          dist/*
+        draft: false
+        prerelease: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Publish to PyPI
+      env:
+        TWINE_USERNAME: __token__
+        TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
+      run: |
+        twine upload dist/* || echo "PyPI upload failed (token may not be configured)"

@@ -10,7 +10,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="openagi",
-    version="1.0.0",
+    version="1.0.1",
     author="VIIICORP",
     description="Comprehensive OpenAGI platform with 14,000+ AI features",
     long_description=long_description,
